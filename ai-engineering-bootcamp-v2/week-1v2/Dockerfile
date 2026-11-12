@@ -12,6 +12,9 @@ EXPOSE 8000
 # Pass the key at runtime — do not bake secrets into the image:
 #   docker build -t week-1v2 .
 #   docker run --rm -p 8000:8000 -e OPENAI_API_KEY=sk-... week-1v2
+# With Pinecone (or use --env-file .env):
+#   docker run --rm -p 8000:8000 -e OPENAI_API_KEY=sk-... \
+#     -e PINECONE_API_KEY=pcsk_... -e PINECONE_INDEX_NAME=rag-demo week-1v2
 #
 # Optional Streamlit UI on another port:
 #   docker run --rm -p 8501:8501 -e OPENAI_API_KEY=sk-... week-1v2 \
